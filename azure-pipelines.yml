@@ -6,10 +6,10 @@ pool:
 
 steps:
 - powershell: |
-    $env:MY_VARIABLE = "Hello, World!"
-    Write-Host "Environment variable MY_VARIABLE is set to: $env:MY_VARIABLE"
+    env:MY_VARIABLE = "Hello, World!"
+    Write-Host "Environment variable MY_VARIABLE is set to: env:MY_VARIABLE"
   displayName: 'Set and display environment variable'
 
 - powershell: |
-    Write-Host "Using environment variable MY_VARIABLE: $env:MY_VARIABLE"
+    Write-Host "Using environment variable MY_VARIABLE: env:MY_VARIABLE"
   displayName: 'Use environment variable in another step'
