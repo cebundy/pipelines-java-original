@@ -2,14 +2,21 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
 
 steps:
-- powershell: |
-    env:MY_VARIABLE = "Hello, World!"
-    Write-Host "Environment variable MY_VARIABLE is set to: $env:MY_VARIABLE"
-  displayName: 'Set and display environment variable'
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo printenv
+# - powershell: |
+#     env:MY_VARIABLE = "Hello, World!"
+#     Write-Host "Environment variable MY_VARIABLE is set to: $env:MY_VARIABLE"
+#   displayName: 'Set and display environment variable'
 
-- powershell: |
-    Write-Host "Using environment variable MY_VARIABLE: $env:MY_VARIABLE"
-  displayName: 'Use environment variable in another step'
+# - powershell: |
+#     Write-Host "Using environment variable MY_VARIABLE: $env:MY_VARIABLE"
+#   displayName: 'Use environment variable in another step'
