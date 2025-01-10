@@ -11,7 +11,7 @@ steps:
     script: |
       # Write your commands here
       
-      echo printenv
+      printenv
 # - powershell: |
 #     env:MY_VARIABLE = "Hello, World!"
 #     Write-Host "Environment variable MY_VARIABLE is set to: $env:MY_VARIABLE"
